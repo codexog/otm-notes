@@ -1,2 +1,11 @@
-{:aliases {:rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
-                   :main-opts ["-m" "rebel-readline.main"]}}}
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.0"}}
+ :aliases {:main {:main-opts ["-m" "otm-notes.core"]}
+           :test {:extra-paths ["test"]
+                  :extra-deps {lambdaisland/kaocha {:mvn/version "0.0-554"}}
+                  :main-opts ["-m" "kaocha.runner"]}
+           :rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
+                   :main-opts ["-m" "rebel-readline.main"]}
+           :uberjar {:extra-deps {luchiniatwork/cambada {:mvn/version "1.0.2"}}
+                     :main-opts ["-m" "cambada.uberjar"
+                                 "-m" "myproj.core"]}}}
