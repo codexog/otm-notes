@@ -7,10 +7,10 @@ notes can be tagged and filtered by tag. For more see [design](../master/docs/de
 
 ## Dev
 
-For this part you will need to have clojure installed. See [Getting Started](https://clojure.org/guides/getting_started) for instructions on installing and getting started. For more information on the command line tools see [Deps and CLI guide](https://clojure.org/reference/deps_and_cli).
+For this part you will need to have clojure installed. See [GettingStarted](https://clojure.org/guides/getting_started) for instructions on installing and getting started. For more information on the command line tools see [Deps and CLI guide](https://clojure.org/reference/deps_and_cli).
 
 ### Run the project
-To run the project in the terminal
+To run the project in the terminal type
 
 ```shell
 clj -A:main <filename>
@@ -30,6 +30,33 @@ The standalone file can be run using
 
 ``` shell
 java -jar target/otm-notes-1.0.0-SNAPSHOT-standalone.jar
+```
+
+### Running a repl
+Run a pretty repl
+
+``` shell
+clj -A:rebel
+```
+### Check your style
+Reports style errors, dead arguments, etc.
+
+``` powershell
+clj -A:style
+```
+
+### Run tests
+Run the test suite.
+
+``` shell
+clj -A:test
+```
+
+### Test coverage
+Generate test coverage report.
+
+``` powershell
+clj -A:cov
 ```
 
 ## Documentation

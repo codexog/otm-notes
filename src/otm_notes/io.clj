@@ -4,8 +4,8 @@
 
 (defn read-state
   "Reads the state from the given edn file, returns nil in case of failure."
-  [file-name]
-  (try (with-open [reader (io/reader file-name)]
+  [filename]
+  (try (with-open [reader (io/reader filename)]
          (edn/read (java.io.PushbackReader. reader)))
        (catch Exception e
          (println (class e))
@@ -13,10 +13,10 @@
          nil)))
 
 (defn write-state
-  "Writes the state to the `state-file-name` file address."
-  [state file-name]
+  "Writes the state to the `filename` file address."
+  [state filename]
   (try
-    (spit file-name state)
+    (spit filename state)
     (flush)
     state
     (catch Exception e
