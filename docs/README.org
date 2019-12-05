@@ -60,6 +60,11 @@ Using [[https://github.com/cloverage/cloverage/tree/master/cloverage/sample/clov
   clj -A:cov
 #+END_SRC
 
+
+* Releases 
+
+- [[https://github.com/codexog/otm-notes/releases/tag/5.12.2019-alpha][5.12.2019-alpha]]
+  
 * Bugs
 - The cursor jumps around in the gui text-fields for tags.
 

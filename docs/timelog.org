@@ -8,22 +8,23 @@
 | <2019-12-03 Tue 10:00>--<2019-12-03 Tue 12:30> | [[Stage III]]            | 2 hours 30 minutes   |
 | <2019-12-03 Tue 13:30>--<2019-12-03 Tue 13:55> | [[Stage III]]            | 25 minutes           |
 | <2019-12-04 Wed 11:00>--<2019-12-04 Wed 15:00> | [[Stage IV]]             | 4 hours              |
-| <2019-12-05 Thu 11:00>--<2019-12-05 Thu 15:00> | [[Stage IV]]             | 4 hours              |
+| <2019-12-05 Thu 11:00>--<2019-12-05 Thu 12:00> | [[Stage IV]]             | 1 hour               |
+| <2019-12-05 Thu 13:00>--<2019-12-05 Thu 17:00> | [[Stage IV]]             | 4 hours              |
 |----------------------+----------------------+----------------------|
 #+TBLFM: $3='(org-evaluate-time-range)
 
-| TOTAL              |
-| 7 hours 10 minutes |
+| TOTAL               |
+| 16 hours 10 minutes |
 
 * Project
 
-** <<Stage I>> Stage I
+** DONE <<Stage I>> Stage I
 - [X] Initial design document
   - [X] Purpose and intended use
   - [X] Roles and intended functionality
 - [X] Timelog
 
-** <<Stage II>> Stage II
+** DONE <<Stage II>> Stage II
 - [X] the repository contains a runnable executable
 - [X] at least part of the basic functionality is implemented
 - [X] there is at least one test
@@ -37,7 +38,7 @@
   - [X] Style check (what is this for clojure? and how to run it)
 - [X] the respository is clean, i.e. contains no superfluous material
 - [X] timelog is up to date
-** <<Stage III>> Stage III
+** DONE <<Stage III>> Stage III
 - [X] More functionality is implemented as compared to the previous stage
 - [X] The code is 'compiles' and the repository contains an up to date executable
 - [X] Improved testing suite
@@ -59,13 +60,13 @@
 - [X] Timelog is up to date
 - [X] The README of the project is up to date
 - [X] Tidy repository
-** <<Stage IV>> Stage IV
+** DONE <<Stage IV>> Stage IV
 - [X] The functionality detailed in the initial design document is implemented
-- [-] Github
+- [X] Github
   - [X] The project is on github
   - [X] issues are permitted
-  - [ ] A github release of the project has been made [[https://github.com/mluukkai/ohjelmistotekniikka-kevat2019/blob/master/web/release.md][instructions]]
-  - [ ] A link to the github release is in the README
+  - [X] A github release of the project has been made [[https://github.com/mluukkai/ohjelmistotekniikka-kevat2019/blob/master/web/release.md][instructions]]
+  - [X] A link to the github release is in the README
 - [X] More functionality has been implemented or the implementation has been improved since the last stage
 - [X] Testing (excluding ui code)
   - [X] It is possible to generate a testcoverage report (jacoco or similar)
@@ -80,13 +81,13 @@
   - [X] Documentation contains at least one sequence chart detailing a relevant sequence of logic performed by the application [[https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/arkkitehtuuri.md#sovelluslogiikka][reference]]
   - [X] Add a chart to the architectural design document from the previous stage
   - [X] A link to the architecture document is in the README [[https://github.com/mluukkai/OtmTodoApp][reference]]
-- [-] The README ([[https://github.com/mluukkai/OtmTodoApp][reference]])
+- [X] The README ([[https://github.com/mluukkai/OtmTodoApp][reference]])
   - [X] it contains a short description of the purpose and function of the project
   - [X] it contains links to the initial design, and architecture documents
   - [X] it contains a link to the timelog
-  - [ ] links to releases
+  - [X] links to releases
   - [X] it details the command line interface to the project
-  - [ ] is up to date
+  - [X] is up to date
 - [X] The repository is clean
   - [X] no extra files
   - [X] a sane .gitignore file is present
