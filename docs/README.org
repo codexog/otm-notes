@@ -5,11 +5,11 @@
 * Use
 
 This is a simple note taking application. One will eventually be able to take, edit, and remove notes using it,
-notes can be tagged and filtered by tag. For more see [[./../master/docs/design.md][design]]. The application has a graphical as well as a command-line interface. The command line interface and the graphical interface are synchronised. In other words they modify the same global state. The graphical and command line interfaces can be terminated separately, they are, however, the same process. At the moment the application must be killed to terminate. The notes are stored in an edn file, for more on the format see [[https://github.com/edn-format/edn][edn-format]].
+notes can be tagged and filtered by tag. For more see [[file:specification.org][specification]]. The application has a graphical as well as a command-line interface. The command line interface and the graphical interface are synchronised. In other words they modify the same global state. The graphical and command line interfaces can be terminated separately, they are, however, the same process. At the moment the application must be killed to terminate. The notes are stored in an edn file, for more on the format see [[https://github.com/edn-format/edn][edn-format]].
 
 * Dev 
 
-To use the development tools you will need to have clojure installed. See [[https://clojure.org/guides/getting_started][GettingStarted]] for instructions on installing and getting started. For more information on the command line tools see [[https://clojure.org/reference/deps_and_cli][Deps and CLI guide]]. For a brief overview of the code structure see [[./../master/docs/architecture.md][architecture]].
+To use the development tools you will need to have clojure installed. See [[https://clojure.org/guides/getting_started][GettingStarted]] for instructions on installing and getting started. For more information on the command line tools see [[https://clojure.org/reference/deps_and_cli][Deps and CLI guide]]. For a brief overview of the code structure see [[file:../master/docs/architecture.org][architecture]].
 
 ** Running the project 
 
@@ -25,7 +25,7 @@ Using [[https://github.com/luchiniatwork/cambada][cambada]]
 #+BEGIN_SRC shell
   clj -A:uberjar
 #+END_SRC
-The files are found in the [[./../master/target][target]] directory.
+The files are found in the [[file:../master/target][target]] directory.
 
 The standalone can be run using the command
 #+BEGIN_SRC shell
@@ -64,4 +64,4 @@ Using [[https://github.com/cloverage/cloverage/tree/master/cloverage/sample/clov
 - The cursor jumps around in the gui text-fields for tags.
 
 * Misc
-For the timelog of the project [[./../master/docs/timelog.org][timelog]].
+For the timelog of the project [[file:../master/docs/timelog.org][timelog]].

@@ -17,7 +17,7 @@ All user interface namespaces are prefixed `otm-notes.ui`. The command-line user
 *** Overview of an interaction with the graphical user interface
 A rough outline of the way that the gui works.
 
-#+BEGIN_SRC plantuml :export results :file gui_interaction.png
+#+BEGIN_SRC plantuml :exports results :file gui_interaction.png
 USER -> "otm-notes.ui.jfx" : ui event
 "otm-notes.ui.jfx" -> "otm-notes.state" : state and event data
 
