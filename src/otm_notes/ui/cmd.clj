@@ -31,7 +31,10 @@
 (defn- prompt-tags
   "Prompts the user for a line of tags."
   []
-  (into #{} (map keyword) (split (prompt "tags") #" ")))
+  (into [] (comp (map trim)
+                 (distinct)
+                 (map keyword))
+        (split (prompt "tags") #" ")))
 
 (defn- read-note
   "Reads a note from the user."
@@ -83,11 +86,6 @@
   [state]
   (os/save state (prompt "filename")))
 
-(defn- exit
-  "Exits the program. Does nothing, returns nil."
-  [_state]
-  nil)
-
 (defn- print-state
   "Prints the state."
   [state]
@@ -106,7 +104,6 @@
                   :list print-active-notes
                   :clear clear-active-tags
                   :save save
-                  :exit exit
                   :state print-state})
 
 
@@ -116,7 +113,7 @@
   (loop [cmd (prompt-command)]
     (when (some? cmd)
       (cond
-        (= cmd :exit) (exit state)
+        (= cmd :exit) 1
         (contains? command-map cmd) (do ((command-map cmd) state)
                                         (recur (prompt-command)))
         :else (do (command-unknown)

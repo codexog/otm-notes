@@ -1,0 +1,38 @@
+#+TITLE:archictecture
+#+AUTHOR: codexog
+
+Here we provide a brief overview of the structure of the code.
+** Structure
+
+The code is separated into different namespaces each isolating a particular concern. The logic and consequently the data-model is contained in `otm-notes.notes`, `otm-notes.state` handles statefulness, `otm-notes.ui.cmd` contains the logic pertaining to the command-line interface, `otm-notes.core` reads the arguments given to the application and contains the main function of the application.
+
+** Data processing and data model
+
+The processing and data model of the application is contained in the namespace `otm-notes.notes`.
+
+** User interface
+
+All user interface namespaces are prefixed `otm-notes.ui`. The command-line user interface is in `otm-notes.ui.cmd`, whereas the graphical user interface is in `otm-notes.ui.jfx`.
+
+*** Overview of an interaction with the graphical user interface
+A rough outline of the way that the gui works.
+
+#+BEGIN_SRC plantuml :export results :file gui_interaction.png
+USER -> "otm-notes.ui.jfx" : ui event
+"otm-notes.ui.jfx" -> "otm-notes.state" : state and event data
+
+"otm-notes.state" -> "otm-notes.notes" : state value and event data
+
+"otm-notes.notes" -> "otm-notes.state" : new state value
+
+"otm-notes.state" -> "otm-notes.ui.jfx" : commit state change
+
+"otm-notes.ui.jfx" -> USER : ui update
+#+END_SRC
+
+#+RESULTS:
+[[file:gui_interaction.png]]
+
+** Persistent storage
+
+The state of the application is stored by calling `otm-notes.state/save` on the state and specifying a filename, the specific form that this call takes depends on the user interface used. The file is saved in the edn format, for more on the format see [[ https://github.com/edn-format/edn][edn-format]].

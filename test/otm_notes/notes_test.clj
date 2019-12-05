@@ -5,9 +5,9 @@
             [clojure.spec.gen.alpha :as gen]))
 
 (t/deftest add-note
-  (let [note #::n {:note-title "A"
-                   :note-body "B"
-                   :tags #{:a :b}}
+  (let [note #::n {:title "A"
+                   :body "B"
+                   :tags [:a :b]}
         note (n/add-id-to-note note)
         id (::n/id note)
         state #::n {}
@@ -21,15 +21,19 @@
     (is (= state-after (n/add-note state note)))))
 
 (t/deftest remove-note
-  (let [note #::n {:note-title "A"
-                   :note-body "B"
-                   :tags #{:a :b}}
+  (let [note #::n {:title "A"
+                   :body "B"
+                   :tags [:a :b]}
         note (n/add-id-to-note note)
         id (::n/id note)
         state #::n {}
         state-after #::n {:note-register {id note}
                           :tag-register {:a #{id}
                                          :b #{id}}}]
+
+    (is (s/valid? ::n/note note))
+    (is (s/valid? ::n/state state))
+    (is (s/valid? ::n/state state-after))
     (is (= state (n/remove-note state nil)))
     (is (= state (n/remove-note state-after note)))))
 

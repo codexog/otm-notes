@@ -1,0 +1,22 @@
+#+TITLE: specification
+#+AUTHOR: codexog
+
+A basic specification of the purpose, use, and means of the project.
+
+** Purpose
+The purpose is to pass the course [[https://github.com/mluukkai/OtmTodoApp/blob/master][OTM]]. Special permission to use Clojure was granted by M.Luukkainen.
+
+** Use
+The applicaction is intended for note taking, filtering and organising the notes using tags.
+
+** Features
+- The user can add, remove and edit notes
+- The user can filter the notes that are displayed by tag
+- The notes can be read and written to a file (edn format)
+
+** Components
+- A command line interface
+- A graphical user interface
+
+** Possible extensions
+- Export the notes to the csv format.
