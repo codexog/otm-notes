@@ -9,7 +9,7 @@ notes can be tagged and filtered by tag. For more see [[file:specification.org][
 
 * Dev 
 
-To use the development tools you will need to have clojure installed. See [[https://clojure.org/guides/getting_started][GettingStarted]] for instructions on installing and getting started. For more information on the command line tools see [[https://clojure.org/reference/deps_and_cli][Deps and CLI guide]]. For a brief overview of the code structure see [[file:../master/docs/architecture.org][architecture]].
+To use the development tools you will need to have clojure installed. See [[https://clojure.org/guides/getting_started][GettingStarted]] for instructions on installing and getting started. For more information on the command line tools see [[https://clojure.org/reference/deps_and_cli][Deps and CLI guide]]. For a brief overview of the code structure see [[file:architecture.org][architecture]].
 
 ** Running the project 
 
@@ -25,7 +25,7 @@ Using [[https://github.com/luchiniatwork/cambada][cambada]]
 #+BEGIN_SRC shell
   clj -A:uberjar
 #+END_SRC
-The files are found in the [[file:../master/target][target]] directory.
+The files are found in the [[file:../target][target]] directory.
 
 The standalone can be run using the command
 #+BEGIN_SRC shell
@@ -64,4 +64,4 @@ Using [[https://github.com/cloverage/cloverage/tree/master/cloverage/sample/clov
 - The cursor jumps around in the gui text-fields for tags.
 
 * Misc
-For the timelog of the project [[file:../master/docs/timelog.org][timelog]].
+For the timelog of the project [[file:timelog.org][timelog]].
