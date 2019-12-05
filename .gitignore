@@ -1,4 +1,4 @@
 .cpcache
 .rebel_readline_history
 *\~
-target/*
+target/

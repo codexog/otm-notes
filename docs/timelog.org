@@ -17,13 +17,13 @@
 
 * Project
 
-** Stage I
+** <<Stage I>> Stage I
 - [X] Initial design document
   - [X] Purpose and intended use
   - [X] Roles and intended functionality
 - [X] Timelog
 
-** Stage II
+** <<Stage II>> Stage II
 - [X] the repository contains a runnable executable
 - [X] at least part of the basic functionality is implemented
 - [X] there is at least one test
@@ -37,7 +37,7 @@
   - [X] Style check (what is this for clojure? and how to run it)
 - [X] the respository is clean, i.e. contains no superfluous material
 - [X] timelog is up to date
-** Stage III 
+** <<Stage III>> Stage III
 - [X] More functionality is implemented as compared to the previous stage
 - [X] The code is 'compiles' and the repository contains an up to date executable
 - [X] Improved testing suite
@@ -59,11 +59,11 @@
 - [X] Timelog is up to date
 - [X] The README of the project is up to date
 - [X] Tidy repository
-** Stage IV
+** <<Stage IV>> Stage IV
 - [X] The functionality detailed in the initial design document is implemented
 - [-] Github
   - [X] The project is on github
-  - [ ] issues are permitted
+  - [X] issues are permitted
   - [ ] A github release of the project has been made [[https://github.com/mluukkai/ohjelmistotekniikka-kevat2019/blob/master/web/release.md][instructions]]
   - [ ] A link to the github release is in the README
 - [X] More functionality has been implemented or the implementation has been improved since the last stage

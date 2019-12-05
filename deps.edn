@@ -17,6 +17,7 @@
                   :main-opts ["-m" "rebel-readline.main"]}
            :uberjar {:extra-deps {luchiniatwork/cambada {:mvn/version "1.0.2"}}
                      :main-opts ["-m" "cambada.uberjar"
-                                 "-m" "otm_notes.core"]}
+                                 "-m" "otm_notes.core"
+                                 "--app-version" "5.12.2019-alpha"]}
            :style {:extra-deps {clj-kondo {:mvn/version "2019.11.23"}}
                    :main-opts ["-m" "clj-kondo.main" "--lint" "src"]}}}
