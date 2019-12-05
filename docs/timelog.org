@@ -1,66 +1,65 @@
 #+NAME: WORK_INTERVALS
-| time interval        | activity             | days                 |
-| <20>                 | <20>                 | <20>                 |
-|----------------------+----------------------+----------------------|
-| <2019-11-29 Fri 11:00>--<2019-11-29 Fri 11:15> | [[Stage I]]              | 15 minutes           |
-| <2019-11-29 Fri 12:30>--<2019-11-29 Fri 15:30> | [[Stage II]]             | 3 hours              |
-| <2019-12-02 Mon 21:30>--<2019-12-02 Mon 22:30> | [[Stage III]]            | 1 hour               |
-| <2019-12-03 Tue 10:00>--<2019-12-03 Tue 12:30> | [[Stage III]]            | 2 hours 30 minutes   |
-| <2019-12-03 Tue 13:30>--<2019-12-03 Tue 13:55> | [[Stage III]]            | 25 minutes           |
-| <2019-12-04 Wed 11:00>--<2019-12-04 Wed 15:00> | [[Stage IV]]             | 4 hours              |
-| <2019-12-05 Thu 11:00>--<2019-12-05 Thu 12:00> | [[Stage IV]]             | 1 hour               |
-| <2019-12-05 Thu 13:00>--<2019-12-05 Thu 17:00> | [[Stage IV]]             | 4 hours              |
-|----------------------+----------------------+----------------------|
+| time interval        | activity  | days                 |
+| <20>                 |           | <20>                 |
+|----------------------+-----------+----------------------|
+| <2019-11-29 Fri 11:00>--<2019-11-29 Fri 11:15> | Stage I   | 15 minutes           |
+| <2019-11-29 Fri 12:30>--<2019-11-29 Fri 15:30> | Stage II  | 3 hours              |
+| <2019-12-02 Mon 21:30>--<2019-12-02 Mon 22:30> | Stage III | 1 hour               |
+| <2019-12-03 Tue 10:00>--<2019-12-03 Tue 12:30> | Stage III | 2 hours 30 minutes   |
+| <2019-12-03 Tue 13:30>--<2019-12-03 Tue 13:55> | Stage III | 25 minutes           |
+| <2019-12-04 Wed 11:00>--<2019-12-04 Wed 15:00> | Stage IV  | 4 hours              |
+| <2019-12-05 Thu 11:00>--<2019-12-05 Thu 12:00> | Stage IV  | 1 hour               |
+| <2019-12-05 Thu 13:00>--<2019-12-05 Thu 17:00> | Stage IV  | 4 hours              |
+|----------------------+-----------+----------------------|
 #+TBLFM: $3='(org-evaluate-time-range)
 
 | TOTAL               |
 | 16 hours 10 minutes |
 
 * Project
+** DONE Stage I
+- [X] In document
+  - [X] intended use
+  - [X] tended functionality
+- [X] Ti
 
-** DONE <<Stage I>> Stage I
-- [X] Initial design document
-  - [X] Purpose and intended use
-  - [X] Roles and intended functionality
-- [X] Timelog
-
-** DONE <<Stage II>> Stage II
-- [X] the repository contains a runnable executable
-- [X] at least part of the basic functionality is implemented
-- [X] there is at least one test
-- [X] the README file of the repository is in order
-  - [X] Brief overview (purpose and intended use)
-  - [X] Comments (pertaining to running and troubleshooting)
-  - [X] Documentation
-  - [X] Releases (not relevant until last week
-  - [X] Commandline interface to dev environment
-  - [X] ClojureDoc (instead of JavaDoc I presume)
-  - [X] Style check (what is this for clojure? and how to run it)
-- [X] the respository is clean, i.e. contains no superfluous material
-- [X] timelog is up to date
-** DONE <<Stage III>> Stage III
-- [X] More functionality is implemented as compared to the previous stage
-- [X] The code is 'compiles' and the repository contains an up to date executable
-- [X] Improved testing suite
-  - [X] At least one new test
-  - [X] It is possible to generate a testcoverage report (jacoco for clojure?) excluding the gui code
-  - [X] Testcoverage is at least 20%
-  - [X] The test are natural and meaningful
-- [X] Quality of code
-  - [X] Application logic is sufficiently separated from ui code
-  - [X] The code is properly packaged (namespaces in clojure? how does this shit work?)
-- [X] Checkstyle
-  - [X] Checkstyle is in use (except for ui code)
-  - [X] There are under 10 checkstyle errors
-- [X] Architecture
-  - [X] A document detailing the current architecture (UML if possible)
-  - [X] A document detailing the current package structure (UML if possible)
-  - [X] A documentation directory is present in the repository
-  - [X] The repository contains an architectural design document see [[https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/arkkitehtuuri.md][example]]
-- [X] Timelog is up to date
-- [X] The README of the project is up to date
-- [X] Tidy repository
-** DONE <<Stage IV>> Stage IV
+** DONE Stage II
+- [X] th contains a runnable executable
+- [X] atof the basic functionality is implemented
+- [X] thast one test
+- [X] the of the repository is in order
+  - [X] ew (purpose and intended use)
+  - [X] rtaining to running and troubleshooting)
+  - [X] n
+  - [X] t relevant until last week
+  - [X] interface to dev environment
+  - [X] instead of JavaDoc I presume)
+  - [X] (what is this for clojure? and how to run it)
+- [X] thy is clean, i.e. contains no superfluous material
+- [X] tito date
+** DONE Stage III
+- [X] Molity is implemented as compared to the previous stage
+- [X] Thompiles' and the repository contains an up to date executable
+- [X] Imng suite
+  - [X]  new test
+  - [X] le to generate a testcoverage report (jacoco for clojure?) excluding the gui code
+  - [X]  is at least 20%
+  - [X]  natural and meaningful
+- [X] Que
+  - [X] logic is sufficiently separated from ui code
+  - [X] properly packaged (namespaces in clojure? how does this shit work?)
+- [X] Ch
+  - [X] s in use (except for ui code)
+  - [X] der 10 checkstyle errors
+- [X] Ar
+  - [X] etailing the current architecture (UML if possible)
+  - [X] etailing the current package structure (UML if possible)
+  - [X] ion directory is present in the repository
+  - [X] ry contains an architectural design document see [[https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/arkkitehtuuri.md][example]]
+- [X] Tito date
+- [X] Ththe project is up to date
+- [X] Tiy
+** DONE Stage IV
 - [X] The functionality detailed in the initial design document is implemented
 - [X] Github
   - [X] The project is on github
