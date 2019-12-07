@@ -15,9 +15,15 @@
            :repl {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}
                                org.clojure/test.check {:mvn/version "0.9.0"}}
                   :main-opts ["-m" "rebel-readline.main"]}
+           :jar {:extra-deps {luchiniatwork/cambada {:mvn/version "1.0.2"}}
+                 :main-opts ["-m" "cambada.jar"
+                             "-m" "otm_notes.core"
+                             "--app-version" "5.12.2019-alpha"
+                             "--copy-source"]}
            :uberjar {:extra-deps {luchiniatwork/cambada {:mvn/version "1.0.2"}}
                      :main-opts ["-m" "cambada.uberjar"
                                  "-m" "otm_notes.core"
-                                 "--app-version" "5.12.2019-alpha"]}
+                                 "--app-version" "5.12.2019-alpha"
+                                 "--copy-source"]}
            :style {:extra-deps {clj-kondo {:mvn/version "2019.11.23"}}
                    :main-opts ["-m" "clj-kondo.main" "--lint" "src"]}}}

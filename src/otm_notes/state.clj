@@ -1,4 +1,5 @@
 (ns otm-notes.state
+  "Makes the data handling stateful."
   (:require [otm-notes.notes :as on]
             [otm-notes.io :as io]))
 

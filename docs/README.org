@@ -4,12 +4,28 @@
 
 * Use
 
-This is a simple note taking application. One will eventually be able to take, edit, and remove notes using it,
-notes can be tagged and filtered by tag. For more see [[file:specification.org][specification]]. The application has a graphical as well as a command-line interface. The command line interface and the graphical interface are synchronised. In other words they modify the same global state. The graphical and command line interfaces can be terminated separately, they are, however, the same process. At the moment the application must be killed to terminate. The notes are stored in an edn file, for more on the format see [[https://github.com/edn-format/edn][edn-format]].
+This is a simple note taking application. One can take, edit, and remove notes using it,
+notes can be tagged and filtered by tag. For more see [[file:specification.org][specification]]. The application has a graphical as well as a command-line interface. The command line interface and the graphical interface are synchronised. In other words they modify the same global state. Terminating either of the active user interfaces will terminate the entire process. The program takes the following options
+
+| prefix     | function                       |
+| <10>       | <30>                           |
+|------------+--------------------------------|
+| -f         | the subsequent string is taken as the default file location, the application will attempt to read from the file at launch, and unless changed will write to it when saving the notes. |
+| -u         | if the subsequent string is "gui" only the graphical user interface will be launched, in case it is "cmd" it launches the command-line interface without the graphical interface, in case the following string is anything else the application terminates immediately |
+
+Any invalid arguments given to the application are ignored.
+
+The notes are stored in an edn file, for more on the format see [[https://github.com/edn-format/edn][edn-format]]. *Be aware that the application does not write the notes to a file on exit, saving is performed only when the user explicitly does so.*
+
+To run the application simply download the jar file associated with the latest release, and run the command
+
+#+BEGIN_SRC shell
+  java -jar <otm-note jar file> <options>
+#+END_SRC
 
 * Dev 
 
-To use the development tools you will need to have clojure installed. See [[https://clojure.org/guides/getting_started][GettingStarted]] for instructions on installing and getting started. For more information on the command line tools see [[https://clojure.org/reference/deps_and_cli][Deps and CLI guide]]. For a brief overview of the code structure see [[file:architecture.org][architecture]].
+To use the development tools you will need to have clojure installed. See [[https://clojure.org/guides/getting_started][GettingStarted]] for instructions on installing and getting started. For more information on the command line tools see [[https://clojure.org/reference/deps_and_cli][Deps and CLI guide]]. For a brief overview of the code structure see [[file:architecture.org][architecture]]. Note also that while this project makes very light use of [[https://clojure.org/about/spec][specs]] they document the implicit data model, and the tests rely on them being up to date.
 
 ** Running the project 
 
@@ -65,8 +81,9 @@ Using [[https://github.com/cloverage/cloverage/tree/master/cloverage/sample/clov
 
 - [[https://github.com/codexog/otm-notes/releases/tag/5.12.2019-alpha][5.12.2019-alpha]]
   
+  
 * Bugs
-- The cursor jumps around in the gui text-fields for tags.
+Fixed the ones I found...
 
 * Misc
 For the timelog of the project [[file:timelog.org][timelog]].

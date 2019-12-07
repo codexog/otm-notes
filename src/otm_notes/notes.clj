@@ -1,21 +1,26 @@
 (ns otm-notes.notes
+  "Contains all data processing functionality."
   (:require [clojure.spec.alpha :as s]
             [otm-notes.utility :refer [uuid clean-assoc]]
             [clojure.string :refer [trim split join]]
-            [clojure.set :refer [intersection]]))
+            [clojure.set :refer [intersection difference union]]))
 
 (s/def ::body string?)
 (s/def ::title string?)
 (s/def ::tag keyword?)
 (s/def ::id uuid?)
-(s/def ::tags (s/coll-of ::tag :kind vector? :distinct ::tag))
+(s/def ::tags (s/coll-of ::tag :kind set? :distinct ::tag))
 (s/def ::note (s/keys :req [::tags ::title ::body ::id]))
 (s/def ::note-update (s/keys :req [::id] :opt [::title ::body ::tags]))
 (s/def ::proto-note (s/keys :req [::tags ::title ::body]))
 (s/def ::notes (s/coll-of ::note :kind vector?))
-(s/def ::tag-register (s/map-of ::tag (s/coll-of ::id :kind set?)))
-(s/def ::note-register (s/map-of ::id ::note))
-(s/def ::active-tags (s/coll-of ::tag :kind vector? :distinct ::tag))
+(s/def ::tag-register (s/and (s/map-of ::tag (s/and (s/coll-of ::id :kind set?)
+                                                    not-empty))
+                             not-empty))
+(s/def ::note-register (s/and (s/map-of ::id ::note)
+                              not-empty))
+(s/def ::active-tags (s/and ::tags
+                            not-empty))
 (s/def ::state (s/keys :opt [::tag-register ::note-register ::active-tags]))
 
 (defn add-id-to-note
@@ -46,6 +51,10 @@
     ::note-register (add-note-to-note-register note-register note)
     ::tag-register (add-note-to-tag-register tag-register note)))
 
+(s/fdef add-note
+  :args (s/cat :state ::state :note ::note)
+  :ret ::state)
+
 
 (defn- remove-note-from-note-register
   "Remove note from note register."
@@ -67,6 +76,10 @@
     ::note-register (remove-note-from-note-register note-register note)
     ::tag-register (remove-note-from-tag-register tag-register note)))
 
+(s/fdef remove-note
+  :args (s/cat :state ::state :note ::note)
+  :ret ::state)
+
 (defn get-note-by-id
   "Returns the note with the given id."
   [{::keys [note-register] :as _state} id]
@@ -85,13 +98,13 @@
   "Adds a tag or tags to the set of active tags in the state."
   [{::keys [active-tags] :as state} tags]
   (clean-assoc
-    state ::active-tags (into [] (distinct) (concat active-tags tags))))
+    state ::active-tags (union active-tags tags)))
 
 (defn remove-active-tags
   "Removes a tag or tags from the set of active tags in the state."
   [{::keys [active-tags] :as state} tags]
   (clean-assoc
-    state ::active-tags (filterv (complement (set tags)) active-tags)))
+    state ::active-tags (difference active-tags tags)))
 
 (defn clear-active-tags
   "Removes all active tags from the state."
@@ -106,17 +119,18 @@
 (defn active-notes
   "Returns a map consisting only of the notes that have an active tag from the state."
   [{::keys [tag-register note-register active-tags] :as _state}]
-  (if (seq active-tags)
+  (if (and (seq active-tags) (seq note-register))
     (select-keys note-register (apply intersection (map tag-register active-tags)))
     note-register))
 
 (defn string->tags
   "Takes a string of space separated keywords and outputs a tag vector."
   [s]
-  (into [] (comp (map trim)
-                 (distinct)
-                 (map keyword))
-        (split (trim s) #" ")))
+  (when s
+    (into #{} (comp (map trim)
+                    (remove empty?)
+                    (map keyword))
+          (seq (split (trim s) #" ")))))
 
 (s/fdef string->tags
   :args (s/cat :string string?)
@@ -125,7 +139,8 @@
 (defn tags->string
   "Takes a vector of tags and ouputs a string of space separated keywords."
   [tags]
-  (apply str (join " " (map (comp #(subs % 1) str) tags))))
+  (when tags
+    (join " " (sort (map (comp #(subs % 1) str) tags)))))
 
 (s/fdef tags->string
   :args (s/cat :tags ::tags)

@@ -1,4 +1,5 @@
 (ns otm-notes.io
+  "Functions for reading and writing edn from/to files."
   (:require [clojure.java.io :as io]
             [clojure.edn :as edn]))
 

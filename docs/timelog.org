@@ -10,6 +10,8 @@
 | <2019-12-04 Wed 11:00>--<2019-12-04 Wed 15:00> | Stage IV  | 4 hours              |
 | <2019-12-05 Thu 11:00>--<2019-12-05 Thu 12:00> | Stage IV  | 1 hour               |
 | <2019-12-05 Thu 13:00>--<2019-12-05 Thu 17:00> | Stage IV  | 4 hours              |
+| <2019-12-06 Fri 17:00>--<2019-12-06 Fri 19:30> | Stage V   | 2 hours 30 minutes   |
+| <2019-12-09 Mon 10:00>--<2019-12-09 Mon 13:00> | Stage V   | 3 hours              |
 |----------------------+-----------+----------------------|
 #+TBLFM: $3='(org-evaluate-time-range)
 
@@ -92,3 +94,46 @@
   - [X] a sane .gitignore file is present
 - [X] Timelog is up to date
 - [X] There is an up to date runnable executable in the repository
+** TODO Stage V
+- [-] Application
+  - [X] It is possible to compile a working jar executable
+  - [X] The executable version of the application has more functionality or the implementation is improved from the previous stage
+  - [ ] A new release of the application has been made
+- [X] Quality of Code
+  - [X] The codebase is not repetitive
+  - [X] The structure of the code is sane
+- [X] Testing
+  - [X] The testing suite is expanded compared to the previous stage
+  - [X] The line coverage of tests is at least 60%
+  - [X] The test are meaningful and natural
+- [ ] Documentation
+  - [ ] cljdoc
+- [X] Architecture
+  - [X] The repo contains an architectural design document [[https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/arkkitehtuuri.md#sovelluslogiikka][reference]]
+  - [X] with a span of ca. 1-2 pages
+- [X] Manual
+  - [X] An inital draft of how to use the program is in the repo, ca. 1 page [[https://github.com/mluukkai/OtmTodoApp/blob/master/dokumentaatio/kayttoohje.md][reference]] (see README)
+- [X] Quality of code
+  - [X] Packaging structure is meaningful
+  - [X] Application logic is separated from ui code
+  - [X] No style errors
+- [-] Timelog
+  - [X] Timelog is up to date
+  - [ ] The total number of hours is written out
+- [-] README [[https://github.com/mluukkai/OtmTodoApp][reference]]
+  - [X] contains a short description of the project
+  - [-] contains links to
+    - [X] initial design document
+    - [X] architectural design document
+    - [ ] manual
+    - [X] timelog
+  - [ ] contains links to releases
+  - [X] details the command line interface to
+    - [X] run tests
+    - [X] generate a test report
+    - [X] generate a runnable executable (.jar)
+    - [X] run a style check
+    - [X] generate documentation
+- [ ] Cleanup
+  - [ ] no irrelevant files
+  - [ ] reasonable .gitignore file

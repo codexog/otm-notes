@@ -1,4 +1,5 @@
 (ns otm-notes.utility
+  "Some miscelaneous utility functions."
   (:require [clojure.spec.alpha :as s]))
 
 (defn uuid

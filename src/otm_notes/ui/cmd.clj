@@ -1,4 +1,5 @@
 (ns otm-notes.ui.cmd
+  "The command line interface of the application."
   (:require [otm-notes.state :as os]
             [otm-notes.utility :refer [uuid]]
             [otm-notes.notes :as note]
@@ -96,6 +97,11 @@
   []
   (println "Invalid command"))
 
+(defn exit
+  "Terminates the process."
+  [_state]
+  (System/exit 0))
+
 (def command-map {:help help
                   :addn add-note
                   :addt add-active-tags
@@ -104,7 +110,8 @@
                   :list print-active-notes
                   :clear clear-active-tags
                   :save save
-                  :state print-state})
+                  :state print-state
+                  :exit exit})
 
 
 (defn main-loop
@@ -112,9 +119,8 @@
   [state]
   (loop [cmd (prompt-command)]
     (when (some? cmd)
-      (cond
-        (= cmd :exit) 1
-        (contains? command-map cmd) (do ((command-map cmd) state)
-                                        (recur (prompt-command)))
-        :else (do (command-unknown)
-                  (recur (prompt-command)))))))
+      (if (contains? command-map cmd)
+        (do ((command-map cmd) state)
+            (recur (prompt-command)))
+        (do (command-unknown)
+            (recur (prompt-command)))))))
