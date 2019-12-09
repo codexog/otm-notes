@@ -8,7 +8,7 @@ Here we provide a brief overview of the structure of the code.
 The code is separated into different namespaces each isolating a particular concern. The logic and consequently the data-model is contained in =otm-notes.notes=, =otm-notes.state= handles statefulness, =otm-notes.ui.cmd= contains the logic pertaining to the command-line interface, =otm-notes.core= reads the arguments given to the application and contains the main function of the application.
 
 *** =otm-notes.state=
-While the code in this namespace looks slightly redundant it isolates the rest of the code from the state model of the application. For instance if we wanted to plug in a database it would only affect this namespace directly. In this application most of state is stored in a single [[https://clojure.org/reference/atoms][atom]], excluding only ui specific atoms, e.g. the =ui-state= in =otm-notes.ui.jfx=.
+While the code in this namespace looks slightly redundant it isolates the rest of the code from the state model of the application. For instance if we wanted to plug in a database it would only affect this namespace directly. In this application most of state is stored in a single [[https://clojure.org/reference/atoms][atom]], not counting ui specific atoms, e.g. the =ui-state= used in =otm-notes.ui.jfx=.
 
 *** =otm-notes.notes=
 Data value processing is best done by pure functions which are much easier to test, all of these ar in the namespace =otm-notes.notes=. Note that another reason to separate these from the state model is that such functions do not compose properly, consider for instance the effect on an observer.
@@ -20,7 +20,7 @@ Simply reads the arguments given to the application at startup and dispatches ca
 The code under this namespace is entirely separated from the particulars of the data model, see =otm-notes.notes=. For the most part it interfaces with the stateful function interface provided by =otm-notes.state=, as well as the coercion functions from =otm-notes.notes=.
 
 **** =jfx=
-Making use of the [[https://github.com/cljfx/cljfx][=cljfx=]] library a Clojure wrapper for [[https://openjfx.io/][JavaFx]], this namespace details the graphical user interface of the application.
+Making use of the [[https://github.com/cljfx/cljfcljfx]]= library a Clojure wrapper for [[https://openjfx.io/][JavaFx]], this namespace details the graphical user interface of the application.
 
 ***** Overview of an interaction with the graphical user interface
 A rough outline of the way that the gui works.
@@ -75,4 +75,4 @@ The processing and data model of the application is contained in the namespace =
 
 ** Persistent storage
 
-The state of the application is stored by calling =otm-notes.state/save= on the state and specifying a filename, the specific form that this call takes depends on the user interface used. The file is saved in the edn format, for more on the format see [[ https://github.com/edn-format/edn][edn-format]].
+The state of the application is stored by calling =otm-notes.state/save= on the state and specifying a filename, the specific form that this call takes depends on the user interface used. The file is saved in the edn format, for more on the format see [[https://github.com/edn-format/edn][edn-format]].

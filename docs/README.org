@@ -8,7 +8,6 @@ This is a simple note taking application. One can take, edit, and remove notes u
 notes can be tagged and filtered by tag. For more see [[file:specification.org][specification]]. The application has a graphical as well as a command-line interface. The command line interface and the graphical interface are synchronised. In other words they modify the same global state. Terminating either of the active user interfaces will terminate the entire process. The program takes the following options
 
 | prefix     | function                       |
-| <10>       | <30>                           |
 |------------+--------------------------------|
 | -f         | the subsequent string is taken as the default file location, the application will attempt to read from the file at launch, and unless changed will write to it when saving the notes. |
 | -u         | if the subsequent string is "gui" only the graphical user interface will be launched, in case it is "cmd" it launches the command-line interface without the graphical interface, in case the following string is anything else the application terminates immediately |
