@@ -138,8 +138,8 @@
 - [X] Cleanup
   - [X] no irrelevant files
   - [X] reasonable .gitignore file
-** TODO Stage VI
-- [ ] Final release
+** DONE Stage VI
+- [X] Final release
 - [X] Documentation [[https://github.com/mluukkai/OtmTodoApp][reference]]
   - [X] User manual
   - [X] Design document

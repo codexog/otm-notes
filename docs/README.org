@@ -77,16 +77,19 @@ Using [[https://github.com/cloverage/cloverage/tree/master/cloverage/sample/clov
   clj -A:cov
 #+END_SRC
 
-
 * Releases 
 
-- [[https://github.com/codexog/otm-notes/releases/tag/5.12.2019-alpha][5.12.2019-alpha]]
+- [[https://github.com/codexog/otm-notes/releases/tag/10.12.2019-final][10.12.2019-final]]
 - [[https://github.com/codexog/otm-notes/releases/tag/9.12.2019-alpha][9.12.2019-alpha]]
-  
-  
+- [[https://github.com/codexog/otm-notes/releases/tag/5.12.2019-alpha][5.12.2019-alpha]]
+   
 * Bugs
 Fixed the ones I found...
 
 * Misc
 For the timelog of the project [[file:timelog.org][timelog]].
 Pertaining to the tests [[tests.org][tests]].
+
+* Possible improvements
+- Export option: csv
+- Style the GUI

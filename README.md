@@ -135,8 +135,9 @@ Using [cloverage](https://github.com/cloverage/cloverage/tree/master/cloverage/s
 
 # Releases
 
--   [5.12.2019-alpha](https://github.com/codexog/otm-notes/releases/tag/5.12.2019-alpha)
+-   [10.12.2019-final](https://github.com/codexog/otm-notes/releases/tag/10.12.2019-final)
 -   [9.12.2019-alpha](https://github.com/codexog/otm-notes/releases/tag/9.12.2019-alpha)
+-   [5.12.2019-alpha](https://github.com/codexog/otm-notes/releases/tag/5.12.2019-alpha)
 
 
 <a id="orgec94799"></a>
@@ -152,4 +153,9 @@ Fixed the ones I found&#x2026;
 
 For the timelog of the project [timelog](docs/timelog.org).
 Pertaining to the tests [tests](docs/tests.org)
+
+# Possible improvements
+
+* Export option: csv
+* Style the GUI
 
