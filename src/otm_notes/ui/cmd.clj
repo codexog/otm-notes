@@ -117,6 +117,7 @@
 (defn main-loop
   "The main loop of the command-line interface."
   [state]
+  (help state)
   (loop [cmd (prompt-command)]
     (when (some? cmd)
       (if (contains? command-map cmd)

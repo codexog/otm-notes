@@ -120,7 +120,7 @@
   "Returns a map consisting only of the notes that have an active tag from the state."
   [{::keys [tag-register note-register active-tags] :as _state}]
   (if (and (seq active-tags) (seq note-register))
-    (select-keys note-register (apply intersection (map tag-register active-tags)))
+    (select-keys note-register (apply intersection (map #(get tag-register % #{}) active-tags)))
     note-register))
 
 (defn string->tags

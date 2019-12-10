@@ -22,6 +22,8 @@ To run the application simply download the jar file associated with the latest r
   java -jar <otm-note jar file> <options>
 #+END_SRC
 
+For more explicit instructions see [[file:manual.org][manual]].
+
 * Dev 
 
 To use the development tools you will need to have clojure installed. See [[https://clojure.org/guides/getting_started][GettingStarted]] for instructions on installing and getting started. For more information on the command line tools see [[https://clojure.org/reference/deps_and_cli][Deps and CLI guide]]. For a brief overview of the code structure see [[file:architecture.org][architecture]]. Note also that while this project makes very light use of [[https://clojure.org/about/spec][specs]] they document the implicit data model, and the tests rely on them being up to date.
@@ -29,10 +31,10 @@ To use the development tools you will need to have clojure installed. See [[http
 ** Running the project 
 
 #+BEGIN_SRC shell :export code
-  clj -A:main "filename"
+  clj -A:main 
 #+END_SRC
 
-using a desired filename.
+this command takes the same command line options as the program, for details see the [[https://github.com/codexog/otm-notes/blob/master/docs/README.org#use][Use]] section of this document or the [[manual.org][Manual]].
 
 ** Make a jar and uberjar
 Using [[https://github.com/luchiniatwork/cambada][cambada]]
@@ -49,7 +51,7 @@ The standalone can be run using the command
 Here again using an actual filename.
 
 ** Start a pretty REPL
-A repl enhanced by [[https://github.com/bhauman/rebel-readline][rebel-readline]]
+A repl enhanced by [[https://github.com/bhauman/rebel-readline][rebel-readline]].
 
 #+BEGIN_SRC shell
   clj -A:repl
@@ -79,6 +81,7 @@ Using [[https://github.com/cloverage/cloverage/tree/master/cloverage/sample/clov
 * Releases 
 
 - [[https://github.com/codexog/otm-notes/releases/tag/5.12.2019-alpha][5.12.2019-alpha]]
+- [[https://github.com/codexog/otm-notes/releases/tag/9.12.2019-alpha][9.12.2019-alpha]]
   
   
 * Bugs
@@ -86,3 +89,4 @@ Fixed the ones I found...
 
 * Misc
 For the timelog of the project [[file:timelog.org][timelog]].
+Pertaining to the tests [[tests.org][tests]].

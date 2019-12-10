@@ -1,0 +1,42 @@
+#+TITLE:Manual
+#+AUTHOR: codexog
+
+* Download
+
+Download the latest version of the application, you can find them for instance in the releases section of the [[file:README.org][README]].
+
+* Launching
+
+To launch the application type the following in a terminal,
+
+#+BEGIN_SRC shell
+  java -jar otm-notes-<some version>.jar
+#+END_SRC
+
+i.e. run the downloaded ~jar~ file. This will launch both the command line interface and the graphical user interface. Exiting in either will terminate both.
+
+* Options
+The application takes two optional command line arguments, the 'default filename' and a specific interface. The options can be combined and specified in any order. Incorrect options are ignored.
+
+** Specifying user interface
+
+To launch the application without the graphical user interface
+#+BEGIN_SRC shell
+  java -jar otm-notes-<...>.jar -u cmd
+#+END_SRC
+To launch only the graphical interface substitute 'cmd' by 'gui'. If the '-u' option is accompanied by an invalid value, i.e. one that is neither 'cmd' or 'gui' neither is activated, and the application terminates.
+
+** Specifying a default file
+
+The application is also able to take a filename at startup. It will attempt to read this file at initialisation making the data in the file available to the user interfaces. This filename is also the filename that will be written to when saving unless another filename is specified later by the user. To specify a file a launch run
+#+BEGIN_SRC shell
+  java -jar otm-notes-<...>.jar -f <filename>
+#+END_SRC
+
+susbtituting '<filename>' with a filename of choice.
+
+* Terms
+The application interfaces refer to the terms *note*, *tag* and *active tags* repeatedly. A *tag* is a string of characters excluding the 'space' character. In the interfaces you specify which *tags* are to be associated with an object by a string, the tags are the space separated sections of this string. A *note* consists of the associated *tags* a *title* consisting of a string and a *body* consisting of a string. The *active tags* are the tags by which the list of notes in the interface is filtered, i.e. only *notes* associated with all the *active tags* are displayed.
+
+* User interfaces
+Both are pretty self explanatory.

@@ -1,0 +1,10 @@
+#+TITLE: Tests
+#+AUTHOR: codexog
+
+There are two types of tests. Most of the tests consist of unit tests, run by =clojure.test= runner, and then there ar a couple of property tests. The property tests check for a generic invariant that a set of functions is supposed to maintain, in particular see the last two tests in [[https://github.com/codexog/otm-notes/test/otm_notes/notes_test.clj][notes-test]]. Each component is tested for its expected behaviour, by itselft and in combination with functions that affect the same data.
+
+See the [[https://github.com/codexog/otm-notes#dev][Dev]] section of the [[https://github.com/codexog/otm-notes][README]] for details on running the tests. Note that the generative tests included do not count towards the code coverage.
+
+* Possible improvements
+- The tests are not decoupled from the data model which makes maintaining them take more time than necessary.
+- It is not clear that the unit tests are representative.

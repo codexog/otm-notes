@@ -12,11 +12,12 @@
 | <2019-12-05 Thu 13:00>--<2019-12-05 Thu 17:00> | Stage IV  | 4 hours              |
 | <2019-12-06 Fri 17:00>--<2019-12-06 Fri 19:30> | Stage V   | 2 hours 30 minutes   |
 | <2019-12-09 Mon 10:00>--<2019-12-09 Mon 13:00> | Stage V   | 3 hours              |
+| <2019-12-10 Tue 11:00>--<2019-12-10 Tue 11:30> | Stage VI  | 30 minutes           |
 |----------------------+-----------+----------------------|
 #+TBLFM: $3='(org-evaluate-time-range)
 
 | TOTAL               |
-| 16 hours 10 minutes |
+| 22 hours 10 minutes |
 
 * Project
 ** DONE Stage I
@@ -94,11 +95,11 @@
   - [X] a sane .gitignore file is present
 - [X] Timelog is up to date
 - [X] There is an up to date runnable executable in the repository
-** TODO Stage V
-- [-] Application
+** DONE Stage V
+- [X] Application
   - [X] It is possible to compile a working jar executable
   - [X] The executable version of the application has more functionality or the implementation is improved from the previous stage
-  - [ ] A new release of the application has been made
+  - [X] A new release of the application has been made
 - [X] Quality of Code
   - [X] The codebase is not repetitive
   - [X] The structure of the code is sane
@@ -117,23 +118,32 @@
   - [X] Packaging structure is meaningful
   - [X] Application logic is separated from ui code
   - [X] No style errors
-- [-] Timelog
+- [X] Timelog
   - [X] Timelog is up to date
-  - [ ] The total number of hours is written out
-- [-] README [[https://github.com/mluukkai/OtmTodoApp][reference]]
+  - [X] The total number of hours is written out
+- [X] README [[https://github.com/mluukkai/OtmTodoApp][reference]]
   - [X] contains a short description of the project
-  - [-] contains links to
+  - [X] contains links to
     - [X] initial design document
     - [X] architectural design document
-    - [ ] manual
+    - [X] manual
     - [X] timelog
-  - [ ] contains links to releases
+  - [X] contains links to releases
   - [X] details the command line interface to
     - [X] run tests
     - [X] generate a test report
     - [X] generate a runnable executable (.jar)
     - [X] run a style check
     - [X] generate documentation
-- [ ] Cleanup
-  - [ ] no irrelevant files
-  - [ ] reasonable .gitignore file
+- [X] Cleanup
+  - [X] no irrelevant files
+  - [X] reasonable .gitignore file
+** TODO Stage VI
+- [ ] Final release
+- [X] Documentation [[https://github.com/mluukkai/OtmTodoApp][reference]]
+  - [X] User manual
+  - [X] Design document
+  - [X] Architectural design document
+  - [X] Test document
+- [X] All documentation is up to date
+  

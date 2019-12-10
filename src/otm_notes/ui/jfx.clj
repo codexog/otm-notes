@@ -100,7 +100,8 @@
       (os/update-note state {::n/id note-id ::n/tags new-tags}))
     ::add-new-note
     (os/add-note state (n/add-id-to-note {::n/title "" ::n/body ""
-                                          ::n/tags (os/active-tags state)}))
+                                          ::n/tags (or (os/active-tags state)
+                                                       #{})}))
     ::active-tag-update
     (let [input-tags (n/string->tags (:fx/event event))]
       (swap! ui-state assoc ::n/active-tags (:fx/event event))
